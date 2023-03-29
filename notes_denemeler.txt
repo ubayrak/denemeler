@@ -1,0 +1,4 @@
+29 Mart :
+Evet bu aksam read_until ile artik istedigimiz komutun sadece o komutun ciktisini alabilecegimizi gorduk.
+polymele.py'da bunu uyguluyoruz, devam edersin.
+
