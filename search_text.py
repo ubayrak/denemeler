@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# BU PROGRAM BELLI DIRECTORY'DEKI DOSYALARI BULUP ICINDE KEYWORD ARAYIP BULDURAN PROGRAMDIR.
+
 import glob
 
 directory_path = '/home/ubayrak/Desktop/Commands'
