@@ -9,4 +9,10 @@ Ofdma otomasyonuna buradan polymele.py'i alabilirim temel olarak.
 24 Nisan:
 Buraya useful scriptlerimi de koyacagim.
 
+29 Nisan:
+Bu gece logread_v2'da yapilan calisma ile OOP olarak temel bir sablonumuz oldu hem komut output gormede
+hem de surekli log almada metotlar olusturularak.
+
+to do :
+telnet error control eklemek lazim, hata durumunda ne yapar kontroller lazim.
 
