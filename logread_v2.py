@@ -45,24 +45,34 @@ class TelnetConnection:
         self.connection.close()
 
 
-def main():
-    host = '192.168.1.200'
-    port = 23
-    username = 'oem'
-    password = 'BytelOem'
-    c1='airdata-cli -e "SetParameterValues Device.X_AIRTIES_Obj.CloudComm.AuthURL https://device-auth-bytelstg.bouygues.airtiescloud.eu/oauth/token"'
-    c2="airdata-cli -e 'SetParameterValues Device.X_AIRTIES_Obj.CloudComm.AuthPassword f7db109d-ff8d-4f7d-aac1-e156c9523559$BtYpKWKuKRJLu6tys5ZdmD8t7PDY1Fcz'"
-    c3='airdata-cli -e "SetParameterValues Device.X_AIRTIES_Obj.CloudComm.ChallengeURL https://device-auth-bytelstg.bouygues.airtiescloud.eu/challenge"'
+# def main():
+#     host = '192.168.1.200'
+#     port = 23
+#     username = 'oem'
+#     password = 'BytelOem'
+#     c1='airdata-cli -e "SetParameterValues Device.X_AIRTIES_Obj.CloudComm.AuthURL https://device-auth-bytelstg.bouygues.airtiescloud.eu/oauth/token"'
+#     c2="airdata-cli -e 'SetParameterValues Device.X_AIRTIES_Obj.CloudComm.AuthPassword f7db109d-ff8d-4f7d-aac1-e156c9523559$BtYpKWKuKRJLu6tys5ZdmD8t7PDY1Fcz'"
+#     c3='airdata-cli -e "SetParameterValues Device.X_AIRTIES_Obj.CloudComm.ChallengeURL https://device-auth-bytelstg.bouygues.airtiescloud.eu/challenge"'
 
 
 
-    conn = TelnetConnection(host, port, username, password)
-    conn.connect()
-    conn.command(c1)
-    conn.command(c2)
-    conn.command(c3)
-    conn.read_log()
+#     conn = TelnetConnection(host, port, username, password)
+#     conn.connect()
+#     # conn.command(c1)
+#     # conn.command(c2)
+#     # conn.command(c3)
+#     conn.read_log()
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
+
+
+host = '192.168.1.200'
+port = 23
+username = 'oem'
+password = 'BytelOem'
+conn = TelnetConnection(host, port, username, password)
+conn.connect()
+conn.read_log()
+
