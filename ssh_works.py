@@ -23,15 +23,7 @@ class SSHConnection:
 
     def execute_command(self, command):
         stdin, stdout, stderr = self.client.exec_command(command)
-        time.sleep(3)
         return stdout.read().decode()
-        
-        # Read and collect the command output
-        # output = ""
-        # for line in stdout:
-        #     output += line
-        # return output
-
 
     def close(self):
         self.client.close()
@@ -40,12 +32,8 @@ class SSHConnection:
 if __name__ == "__main__":
     ssh = SSHConnection("192.168.1.254", 22, "oem", "BytelOem")
     ssh.connect()
-    time.sleep(3)
 
-    result = ssh.execute_command("airdata-cli -e \"GetParameterValues Device.X_AIRTIES_Obj.MultiAPController.SSIDProfile.3.\"")
-
-    # time.sleep(5)
-    # result = ssh.execute_command("wl -i wl0 status")
+    result = ssh.execute_command("wb_cli -s info")
     print(result)
 
     ssh.close()

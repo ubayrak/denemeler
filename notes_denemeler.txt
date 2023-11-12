@@ -13,6 +13,8 @@ Buraya useful scriptlerimi de koyacagim.
 Bu gece logread_v2'da yapilan calisma ile OOP olarak temel bir sablonumuz oldu hem komut output gormede
 hem de surekli log almada metotlar olusturularak.
 
-to do :
-telnet error control eklemek lazim, hata durumunda ne yapar kontroller lazim.
+12 Kasim :
+ssh_works temel ssh method'unu iceriyor. Burada airdata haric diger komutlar calisiyor.
+ssh_denemelerden de airdata icin yapilan method var, bunlari ikisini artik bizim TEST projesine eklemek gerekiyor.
+
 
