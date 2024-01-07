@@ -1,5 +1,6 @@
 import paramiko
 import sys
+import time
 
 # Define your SSH connection details
 hostname = "192.168.1.254"
@@ -27,12 +28,13 @@ try:
 
     # Send the user's input as a command
     ssh_session.send(user_input + "\n")
-    
+    time.sleep(1) 
     # Read and print the output
     output = ssh_session.recv(65535).decode()
     print("Command Output:")
     print(output)
 
+    time.sleep(1)
     # Close the SSH session
     ssh_session.close()
 
