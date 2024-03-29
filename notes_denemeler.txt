@@ -17,4 +17,5 @@ hem de surekli log almada metotlar olusturularak.
 ssh_works temel ssh method'unu iceriyor. Burada airdata haric diger komutlar calisiyor.
 ssh_denemelerden de airdata icin yapilan method var, bunlari ikisini artik bizim TEST projesine eklemek gerekiyor.
 
-
+29 mart 2024:
+deneme1 eklendi, tamam bunu class'i connect ve command ile birlikte koyabiliriz Test projesine.
