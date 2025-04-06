@@ -1,0 +1,21 @@
+29 Mart :
+Evet bu aksam read_until ile artik istedigimiz komutun sadece o komutun ciktisini alabilecegimizi gorduk.
+polymele.py'da bunu uyguluyoruz, devam edersin.
+
+9 Nisan : 
+Burayi bir gecis ussu olarak kullanacagiz. Yani burada once temel sablonlar denenecek sonra buradan asil proje icerisine konulacak.
+Ofdma otomasyonuna buradan polymele.py'i alabilirim temel olarak.
+
+24 Nisan:
+Buraya useful scriptlerimi de koyacagim.
+
+29 Nisan:
+Bu gece logread_v2'da yapilan calisma ile OOP olarak temel bir sablonumuz oldu hem komut output gormede
+hem de surekli log almada metotlar olusturularak.
+
+12 Kasim :
+ssh_works temel ssh method'unu iceriyor. Burada airdata haric diger komutlar calisiyor.
+ssh_denemelerden de airdata icin yapilan method var, bunlari ikisini artik bizim TEST projesine eklemek gerekiyor.
+
+29 mart 2024:
+deneme1 eklendi, tamam bunu class'i connect ve command ile birlikte koyabiliriz Test projesine.
