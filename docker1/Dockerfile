@@ -47,7 +47,27 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy your script into the container
-COPY seldenem.py .
+COPY seldenem2.py .
 
 # Set the entrypoint
-CMD ["python", "seldenem.py"]
+CMD ["python", "seldenem2.py"]
+
+
+####################### TRY a different base image ######################
+#FROM selenium/standalone-firefox:latest
+#
+#USER root
+#
+## Install Python and pip
+#RUN apt-get update && \
+#    apt-get install -y python3 python3-pip && \
+#    rm -rf /var/lib/apt/lists/*
+#
+## Copy your script
+#COPY seldenem2.py /seldenem2.py
+#
+## Install Python dependencies if needed
+## COPY requirements.txt .
+## RUN pip3 install --no-cache-dir -r requirements.txt
+#
+#CMD ["python3", "/seldenem2.py"]
