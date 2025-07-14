@@ -23,4 +23,4 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the script
-CMD ["python", "script.py"]
+CMD ["python", "upgrade.py"]
