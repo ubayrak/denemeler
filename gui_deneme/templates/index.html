@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tool Runner</title>
+</head>
+<body>
+    <h1>Run Tool</h1>
+    <form method="post">
+        <button type="submit">Start Tool</button>
+    </form>
+    <hr>
+    <div id="log-area">
+        <!-- Logs will stream here -->
+    </div>
+    <script>
+        const form = document.querySelector('form');
+        const logArea = document.getElementById('log-area');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            logArea.innerHTML = 'Running...<br>';
+            fetch("/", { method: "POST" })
+                .then(response => {
+                    const reader = response.body.getReader();
+                    const decoder = new TextDecoder();
+                    function read() {
+                        reader.read().then(({ done, value }) => {
+                            if (done) return;
+                            logArea.innerHTML += decoder.decode(value);
+                            read();
+                        });
+                    }
+                    read();
+                });
+        });
+    </script>
+</body>
+</html>
