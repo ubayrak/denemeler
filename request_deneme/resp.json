@@ -1,0 +1,230 @@
+[
+  {
+    "id": "6cabafc289c8cb28f35d9ad783d80710",
+    "name": "08:BE:AC:0D:FD:14",
+    "dhcpNameIndicator": null,
+    "manufacturer": null,
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Windows",
+    "version": null,
+    "type": "Unknown Type",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "08:BE:AC:0D:FD:14"
+    ],
+    "lastSeen": "1759139324186"
+  },
+  {
+    "id": "193d453facab960958ac604dc544a5f6",
+    "name": "08:BE:AC:0D:FA:FD",
+    "dhcpNameIndicator": null,
+    "manufacturer": null,
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Windows",
+    "version": null,
+    "type": "Unknown Type",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "08:BE:AC:0D:FA:FD"
+    ],
+    "lastSeen": "1758898978416"
+  },
+  {
+    "id": "ba25f443c3401667ed5de7ba709ced9b",
+    "name": "Apple iPhone",
+    "dhcpNameIndicator": null,
+    "manufacturer": "Apple",
+    "model": "iPhone",
+    "modelVersion": null,
+    "modelOnly": "iPhone",
+    "os": "iOS",
+    "version": null,
+    "type": "Phone",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "AE:19:F7:8D:DE:D0"
+    ],
+    "lastSeen": "1759140484868"
+  },
+  {
+    "id": "bbb6899800fc313662c1bbbdce5892d9",
+    "name": "Huawei P40",
+    "dhcpNameIndicator": null,
+    "manufacturer": "Huawei",
+    "model": "P40 Lite",
+    "modelVersion": "Lite",
+    "modelOnly": "P40",
+    "os": "Android",
+    "version": null,
+    "type": "Phone",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "A2:F0:E4:C8:39:F1"
+    ],
+    "lastSeen": "1759126615720"
+  },
+  {
+    "id": "c3cf318462611e5a74cfae289007d3bf",
+    "name": "Apple Device",
+    "dhcpNameIndicator": null,
+    "manufacturer": "Apple",
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Unknown OS",
+    "version": null,
+    "type": "Watch",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "96:78:97:53:D0:81"
+    ],
+    "lastSeen": "1758897876447"
+  },
+  {
+    "id": "6d774b81911d52325469009f34a5c06a",
+    "name": "08:BE:AC:0D:FD:1B",
+    "dhcpNameIndicator": null,
+    "manufacturer": null,
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Windows",
+    "version": null,
+    "type": "Unknown Type",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "08:BE:AC:0D:FD:1B"
+    ],
+    "lastSeen": "1758897967741"
+  },
+  {
+    "id": "d9315983cfa01c88e4e2d4318017125e",
+    "name": "Apple Device",
+    "dhcpNameIndicator": null,
+    "manufacturer": "Apple",
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Unknown OS",
+    "version": null,
+    "type": "Watch",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "E6:34:19:15:53:CE"
+    ],
+    "lastSeen": "1759139565346"
+  },
+  {
+    "id": "ba141abf1f0db9ecf6e967a487119c02",
+    "name": "50:2B:73:D4:3C:62",
+    "dhcpNameIndicator": null,
+    "manufacturer": null,
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Windows",
+    "version": null,
+    "type": "Unknown Type",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "50:2B:73:D4:3C:62"
+    ],
+    "lastSeen": "1759145747218"
+  },
+  {
+    "id": "31291ede05815704b256026a4d34bd53",
+    "name": "D0:37:45:65:C0:D3",
+    "dhcpNameIndicator": null,
+    "manufacturer": null,
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Windows",
+    "version": null,
+    "type": "Unknown Type",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "D0:37:45:65:C0:D3"
+    ],
+    "lastSeen": "1759136522688"
+  },
+  {
+    "id": "42a4bded942d73d63ee8e6eba3180a48",
+    "name": "74:DA:88:A9:B3:90",
+    "dhcpNameIndicator": null,
+    "manufacturer": null,
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Unknown OS",
+    "version": null,
+    "type": "Unknown Type",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "74:DA:88:A9:B3:90"
+    ],
+    "lastSeen": "1758903501032"
+  },
+  {
+    "id": "e24a353b5655597702ecc2ac95468c4e",
+    "name": "F0:77:C3:52:23:1C",
+    "dhcpNameIndicator": null,
+    "manufacturer": null,
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Windows",
+    "version": null,
+    "type": "Unknown Type",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "F0:77:C3:52:23:1C"
+    ],
+    "lastSeen": "1759139435274"
+  },
+  {
+    "id": "45152b826a8c1a990c85346da56fe908",
+    "name": "2C:FD:A1:CE:FE:A9",
+    "dhcpNameIndicator": null,
+    "manufacturer": null,
+    "model": "Device",
+    "modelVersion": "",
+    "modelOnly": "Device",
+    "os": "Windows",
+    "version": null,
+    "type": "Unknown Type",
+    "ipv4Addresses": null,
+    "ipv6Addresses": null,
+    "ipAddress": null,
+    "macAddress": [
+      "2C:FD:A1:CE:FE:A9"
+    ],
+    "lastSeen": "1759042063882"
+  }
+]
