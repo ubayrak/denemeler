@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Sniffer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .band-group {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin-top: 5px;
+            width: 100px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        select {
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        button[name="start"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button[name="start"]:hover {
+            background-color: #45a049;
+        }
+        button[name="stop"] {
+            background-color: #f44336;
+            color: white;
+        }
+        button[name="stop"]:hover {
+            background-color: #da190b;
+        }
+        #logContainer {
+            background-color: #1e1e1e;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #333;
+        }
+        .log-entry {
+            margin: 2px 0;
+        }
+        .log-info {
+            color: #00ff00;
+        }
+        .log-warning {
+            color: #ffff00;
+        }
+        .log-error {
+            color: #ff6b6b;
+        }
+        .log-debug {
+            color: #00ffff;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>WiFi Sniffer Control</h2>
+
+<div class="container">
+    <div class="section">
+        <form method="POST">
+            <h3>Select Bands & Channels</h3>
+
+            <div class="band-group">
+                <label>
+                    <input type="checkbox" name="band" value="2.4GHz"> 2.4GHz
+                </label>
+                <br>
+                Channel: 
+                <select name="channel_2.4GHz">
+                    <option value="">-- Select Channel --</option>
+                    <option value="1">1 (2412 MHz)</option>
+                    <option value="2">2 (2417 MHz)</option>
+                    <option value="3">3 (2422 MHz)</option>
+                    <option value="4">4 (2427 MHz)</option>
+                    <option value="5">5 (2432 MHz)</option>
+                    <option value="6">6 (2437 MHz)</option>
+                    <option value="7">7 (2442 MHz)</option>
+                    <option value="8">8 (2447 MHz)</option>
+                    <option value="9">9 (2452 MHz)</option>
+                    <option value="10">10 (2457 MHz)</option>
+                    <option value="11">11 (2462 MHz)</option>
+                </select>
+            </div>
+
+            <div class="band-group">
+                <label>
+                    <input type="checkbox" name="band" value="5GHz"> 5GHz
+                </label>
+                <br>
+                Channel: 
+                <select name="channel_5GHz">
+                    <option value="">-- Select Channel --</option>
+                    <option value="36">36 (5180 MHz)</option>
+                    <option value="40">40 (5200 MHz)</option>
+                    <option value="44">44 (5220 MHz)</option>
+                    <option value="48">48 (5240 MHz)</option>
+                    <option value="52">52 (5260 MHz)</option>
+                    <option value="56">56 (5280 MHz)</option>
+                    <option value="60">60 (5300 MHz)</option>
+                    <option value="64">64 (5320 MHz)</option>
+                    <option value="100">100 (5500 MHz)</option>
+                    <option value="104">104 (5520 MHz)</option>
+                    <option value="108">108 (5540 MHz)</option>
+                    <option value="112">112 (5560 MHz)</option>
+                    <option value="116">116 (5580 MHz)</option>
+                    <option value="120">120 (5600 MHz)</option>
+                    <option value="124">124 (5620 MHz)</option>
+                    <option value="128">128 (5640 MHz)</option>
+                    <option value="132">132 (5660 MHz)</option>
+                    <option value="136">136 (5680 MHz)</option>
+                    <option value="140">140 (5700 MHz)</option>
+                    <option value="144">144 (5720 MHz)</option>
+                    <option value="149">149 (5745 MHz)</option>
+                    <option value="153">153 (5765 MHz)</option>
+                    <option value="157">157 (5785 MHz)</option>
+                    <option value="161">161 (5805 MHz)</option>
+                    <option value="165">165 (5825 MHz)</option>
+                </select>
+            </div>
+
+            <div class="band-group">
+                <label>
+                    <input type="checkbox" name="band" value="6GHz"> 6GHz
+                </label>
+                <br>
+                Channel: 
+                <select name="channel_6GHz">
+                    <option value="">-- Select Channel --</option>
+                    <option value="6g5">6g5 (5945 MHz)</option>
+                    <option value="6g21">6g21 (6025 MHz)</option>
+                    <option value="6g37">6g37 (6105 MHz)</option>
+                    <option value="6g53">6g53 (6185 MHz)</option>
+                    <option value="6g69">6g69 (6265 MHz)</option>
+                    <option value="6g85">6g85 (6345 MHz)</option>
+                    <option value="6g101">6g101 (6425 MHz)</option>
+                    <option value="6g117">6g117 (6505 MHz)</option>
+                    <option value="6g133">6g133 (6585 MHz)</option>
+                    <option value="6g149">6g149 (6665 MHz)</option>
+                    <option value="6g165">6g165 (6745 MHz)</option>
+                    <option value="6g181">6g181 (6825 MHz)</option>
+                    <option value="6g197">6g197 (6905 MHz)</option>
+                    <option value="6g213">6g213 (6985 MHz)</option>
+                    <option value="6g229">6g229 (7065 MHz)</option>
+                </select>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button type="submit" name="start">▶ Start Sniff</button>
+                <button type="submit" name="stop">⏹ Stop Sniff</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="section">
+        <h3>System Logs</h3>
+        <div id="logContainer">
+            {% for log in logs %}
+                <div class="log-entry">{{ log }}</div>
+            {% endfor %}
+            {% if not logs %}
+                <div class="log-entry log-info">Waiting for logs...</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    // Auto-refresh logs every 1 second
+    function updateLogs() {
+        fetch('/api/logs')
+            .then(response => response.json())
+            .then(data => {
+                const logContainer = document.getElementById('logContainer');
+                logContainer.innerHTML = '';
+                
+                if (data.logs.length === 0) {
+                    logContainer.innerHTML = '<div class="log-entry log-info">Waiting for logs...</div>';
+                } else {
+                    data.logs.forEach(log => {
+                        const logEntry = document.createElement('div');
+                        logEntry.className = 'log-entry';
+                        
+                        if (log.includes('ERROR')) {
+                            logEntry.className += ' log-error';
+                        } else if (log.includes('WARNING')) {
+                            logEntry.className += ' log-warning';
+                        } else if (log.includes('DEBUG')) {
+                            logEntry.className += ' log-debug';
+                        } else {
+                            logEntry.className += ' log-info';
+                        }
+                        
+                        logEntry.textContent = log;
+                        logContainer.appendChild(logEntry);
+                    });
+                    
+                    // Auto-scroll to bottom
+                    logContainer.scrollTop = logContainer.scrollHeight;
+                }
+            })
+            .catch(error => console.error('Error fetching logs:', error));
+    }
+    
+    // Update logs on page load and every 1 second
+    updateLogs();
+    setInterval(updateLogs, 1000);
+</script>
+
+</body>
+</html>
