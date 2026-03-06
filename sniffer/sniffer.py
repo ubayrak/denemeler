@@ -73,6 +73,7 @@ class SnifferController:
             self.ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=1)
             self.running_processes = []
             self.capture_files = {}  # Track capture files for each band
+            self.sniffing_active = False  # Track if sniffing is in progress
             add_log("Serial connection established at /dev/ttyUSB0")
             time.sleep(2)  # Wait for serial connection to establish
             add_log("Ready to control sniffing machine")
@@ -86,6 +87,7 @@ class SnifferController:
         add_log("Sniff machine startup command sent, waiting 12 seconds for boot...")
         time.sleep(12)
         add_log("Sniff machine started successfully")
+        self.sniffing_active = True
         
     def start_band(self, band, channel):
         try:
@@ -127,6 +129,7 @@ class SnifferController:
         time.sleep(3)
         add_log("Sniff machine stopped")
         add_log("Capture files saved in the directory: /home/test/Sniffer/")
+        self.sniffing_active = False
 
 
     def stop_all(self):
@@ -145,6 +148,8 @@ class SnifferController:
             add_log(f"Terminated process PID: {p.pid}")
 
         self.running_processes.clear()
+        self.capture_files.clear()  # Clear capture files when stopping
+        self.sniffing_active = False  # Set state to not active
         add_log("All capture processes stopped successfully")
 
     def get_capture_files(self):
@@ -155,6 +160,10 @@ class SnifferController:
         """Clear the capture files tracking"""
         self.capture_files.clear()
         add_log("Capture file tracking cleared")
+
+    def is_sniffing_active(self):
+        """Return whether sniffing is currently active"""
+        return self.sniffing_active
 
 
 

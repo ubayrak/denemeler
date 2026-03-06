@@ -207,7 +207,9 @@
             </div>
 
             <div style="margin-top: 20px;">
-                <button type="submit" name="start">▶ Start Sniff</button>
+                {% if not sniffing_active %}
+                    <button type="submit" name="start">▶ Start Sniff</button>
+                {% endif %}
                 <button type="submit" name="stop">⏹ Stop Sniff</button>
             </div>
         </form>

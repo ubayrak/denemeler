@@ -34,7 +34,8 @@ def index():
 
     logs = get_logs()
     capture_files = controller.get_capture_files()
-    return render_template("index.html", logs=logs, capture_files=capture_files)
+    sniffing_active = controller.is_sniffing_active()
+    return render_template("index.html", logs=logs, capture_files=capture_files, sniffing_active=sniffing_active)
 
 @app.route("/api/logs", methods=["GET"])
 def fetch_logs():
