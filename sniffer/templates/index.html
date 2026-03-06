@@ -224,6 +224,30 @@
             {% endif %}
         </div>
     </div>
+
+    <div class="section">
+        <h3>Capture Files</h3>
+        {% if capture_files %}
+            <div style="margin-bottom: 15px;">
+                {% for band, filename in capture_files.items() %}
+                    <div style="margin-bottom: 10px; padding: 10px; background-color: #f0f0f0; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>{{ band }}:</strong> {{ filename }}
+                        </div>
+                        <a href="/download/{{ filename }}" download="{{ filename }}">
+                            <button style="background-color: #2196F3; color: white; padding: 5px 15px; border: none; border-radius: 4px; cursor: pointer;">
+                                Download {{ band }}
+                            </button>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div style="color: #666; font-style: italic;">
+                No capture files available. Start sniffing to generate capture files.
+            </div>
+        {% endif %}
+    </div>
 </div>
 
 <script>

@@ -72,6 +72,7 @@ class SnifferController:
         try:
             self.ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=1)
             self.running_processes = []
+            self.capture_files = {}  # Track capture files for each band
             add_log("Serial connection established at /dev/ttyUSB0")
             time.sleep(2)  # Wait for serial connection to establish
             add_log("Ready to control sniffing machine")
@@ -112,6 +113,10 @@ class SnifferController:
             add_log(f"Starting tcpdump capture on interface {radiotaps[band]}")
             self.ser.write(tcpdump_cmd.encode())
             add_log(f"tcpdump started, streaming to 192.168.2.228:{ports[band]}")
+            
+            # Track the capture file
+            self.capture_files[band] = f"Capture_{band}.pcap"
+            
         except Exception as e:
             add_log(f"Error starting band {band}: {str(e)}", "ERROR")
 
@@ -141,6 +146,15 @@ class SnifferController:
 
         self.running_processes.clear()
         add_log("All capture processes stopped successfully")
+
+    def get_capture_files(self):
+        """Return dictionary of capture files by band"""
+        return self.capture_files.copy()
+
+    def clear_capture_files(self):
+        """Clear the capture files tracking"""
+        self.capture_files.clear()
+        add_log("Capture file tracking cleared")
 
 
 
