@@ -88,6 +88,7 @@ class SnifferController:
         time.sleep(12)
         add_log("Sniff machine started successfully")
         self.sniffing_active = True
+        self.capture_files.clear()  # Clear previous capture files when starting new session
         
     def start_band(self, band, channel):
         try:
@@ -148,7 +149,6 @@ class SnifferController:
             add_log(f"Terminated process PID: {p.pid}")
 
         self.running_processes.clear()
-        self.capture_files.clear()  # Clear capture files when stopping
         self.sniffing_active = False  # Set state to not active
         add_log("All capture processes stopped successfully")
 
