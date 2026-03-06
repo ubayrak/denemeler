@@ -40,5 +40,5 @@ def fetch_logs():
     return jsonify({"logs": get_logs()})
 
 if __name__ == "__main__":
-    add_log("Starting Flask web server on http://127.0.0.1:5000")
-    app.run(debug=True, use_reloader=False)
+    add_log("Starting Flask web server")
+    app.run(debug=False, host="0.0.0.0", port=5000, use_reloader=False)

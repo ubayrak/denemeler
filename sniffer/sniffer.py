@@ -60,7 +60,7 @@ sniff_stop="sniff.sh stop\n"
 def set_PC_cmd(band):
     return f"nc -l -p {ports[band]} > Capture{band}.pcap &"
 def set_tcpdump_cmd(band):
-    return f"tcpdump -i {radiotaps[band]} -n -w - | nc 192.168.2.22 {ports[band]} &\n"
+    return f"tcpdump -i {radiotaps[band]} -n -w - | nc 192.168.2.228 {ports[band]} &\n"
 def set_channel_cmd(band, channel):
     return f" wl -i {interfaces[band]} chanspec {channel}/{bandwidths[band]}\n"
 
@@ -108,10 +108,10 @@ class SnifferController:
             add_log(f"Channel set successfully for {band}")
 
             # 3️⃣ Start tcpdump on device
-            tcpdump_cmd = f"tcpdump -i {radiotaps[band]} -n -w - | nc 192.168.2.22 {ports[band]} &\n"
+            tcpdump_cmd = f"tcpdump -i {radiotaps[band]} -n -w - | nc 192.168.2.228 {ports[band]} &\n"
             add_log(f"Starting tcpdump capture on interface {radiotaps[band]}")
             self.ser.write(tcpdump_cmd.encode())
-            add_log(f"tcpdump started, streaming to 192.168.2.22:{ports[band]}")
+            add_log(f"tcpdump started, streaming to 192.168.2.228:{ports[band]}")
         except Exception as e:
             add_log(f"Error starting band {band}: {str(e)}", "ERROR")
 
@@ -121,6 +121,8 @@ class SnifferController:
         add_log("Sniff machine stop command sent, waiting 3 seconds...")
         time.sleep(3)
         add_log("Sniff machine stopped")
+        add_log("Capture files saved in the directory: /home/test/Sniffer/")
+
 
     def stop_all(self):
         add_log("Stopping all capture processes...")
